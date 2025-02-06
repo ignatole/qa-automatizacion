@@ -24,16 +24,19 @@ public class AccessAccountPage extends BasePage {
     
   
 
-    public void sendKeysAccessAccountInput(String account) {
+    public AccessAccountPage sendKeysAccessAccountInput(String account) {
     	sendKeys(accessAccountInput,account,"Send Account ID/Name");
+    	return this;
     }
     
-    public void clickAccessAccountBackBtn() {
+    public AccessAccountPage clickAccessAccountBackBtn() {
     	click(accessAccountBackBtn, "Click Access Account Button");
+    	return this;
     }
     
-    public void clickAccessAccountFirstListResult() {
+    public AccessAccountPage clickAccessAccountFirstListResult() {
     	click(accessAccountFirstListResult, "Click Access Account First Line Result");
+    	return this;
     }
 }
 

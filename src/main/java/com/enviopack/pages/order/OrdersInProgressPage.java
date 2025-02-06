@@ -1,4 +1,4 @@
-package com.enviopack.pages;
+package com.enviopack.pages.order;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

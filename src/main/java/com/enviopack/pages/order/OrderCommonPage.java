@@ -1,9 +1,11 @@
-package com.enviopack.pages;
+package com.enviopack.pages.order;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
+import com.enviopack.pages.BasePage;
 import com.enviopack.utils.TableReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +28,14 @@ public class OrderCommonPage extends BasePage {
 	private By toProcessTableSearchFindBtn = By.cssSelector(".sc-bczRLJ.cvcONn");
     private By filterBtn = By.xpath("//span[text()='Filtros']");
     // Localizador de las cabeceras de las columnas
-    private By headers = By.cssSelector(".table__head .table__cell");
+    private String headerRowXPath = "//div[@class='table__head']//div[contains(@class, 'table-row-selector')]";
     private String rowXPath = "//body/div[@id='app']/div[@class='sc-bczRLJ fPqkYZ']/div[@class='sc-bczRLJ bFhEtX']/div[@class='sc-bczRLJ fIvMuv']/div[@class='layout__main-content']/div[@role='table']/div[@class='styled__TableBody-sc-pv1bhz-1 eouKRU']/div";
     private TableReader tableReader;
 
     public OrderCommonPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+        this.tableReader = new TableReader();
     }
 
     // Métodos comunes para botones y navegación
@@ -90,5 +93,10 @@ public class OrderCommonPage extends BasePage {
 
     public List<List<String>> getFirstTenRows() {
         return tableReader.readTableRows(driver, rowXPath, 10);
+    }
+    
+    public List<String> getTableHeaders() {
+        TableReader tableReader = new TableReader();
+        return tableReader.readTableHeaders(driver,headerRowXPath);
     }
 }
