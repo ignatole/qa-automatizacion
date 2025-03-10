@@ -8,7 +8,7 @@ import com.enviopack.pages.BasePage;
 
 public class SecondStepCreateOrderPage extends BasePage{
 
-	private By step2Ttl = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.EcUGL.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.hdFuNh:nth-child(3) > div.sc-bczRLJ.jFlnUV");
+	private By stepTwoTtl = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.EcUGL.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.hdFuNh:nth-child(3) > div.sc-bczRLJ.jFlnUV");
 	private By ensureShipmentCheckbox = By.id("seguro-check");
 	private By moreInformationLinkBtn = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/a");
 	private By fromMyWarehousePickupBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(1) > div.sc-bczRLJ.kAizsf");
@@ -39,7 +39,7 @@ public class SecondStepCreateOrderPage extends BasePage{
 	// Estos métodos realizan la acción de click sobre los elementos   
 	
 	public void clickstep2() {
-		 click(step2Ttl, "title verification step 2");
+		 click(stepTwoTtl, "title verification step 2");
 	 	}
 	 
 	// Modal quiero asegurar mi envío

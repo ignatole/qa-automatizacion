@@ -18,14 +18,14 @@ public class OrderCommonPage extends BasePage {
     private By searchBarBtn = By.name("q");
     private By moreActionsBtn = By.xpath("//span[@class='button-select__name' and text()='Más acciones']");
     // Elementos de Herni
-	private By toProcessReturnBtn = By.cssSelector("div[class='button-select__options-wrapper'] div:nth-child(1) span:nth-child(1)");
-	private By toProcessUploadCsvBtn = By.cssSelector("div[class='layout__main-header'] div[class='sc-bczRLJ lkpwjH'] div:nth-child(2) span:nth-child(1)");
-	private By toProcessTableSearchModalTitle = By.cssSelector(".sc-evZas.iOWtmw");
-	private By toProcessTableSearchBySelector = By.cssSelector(".input__content.input__content--hover.input__content--select");
-	private By toProcessTableSearchByOrder = By.cssSelector(".input__select-option.input__select-option--selected");
-	private By toProcessTableSearchByCustomer = By.cssSelector("div[class='input__select-option']");
-	private By toProcessTableSearchInput = By.cssSelector("input[placeholder='Buscar por número de orden']");
-	private By toProcessTableSearchFindBtn = By.cssSelector(".sc-bczRLJ.cvcONn");
+	private By returnBtn = By.cssSelector("div[class='button-select__options-wrapper'] div:nth-child(1) span:nth-child(1)");
+	private By uploadCsvBtn = By.cssSelector("div[class='layout__main-header'] div[class='sc-bczRLJ lkpwjH'] div:nth-child(2) span:nth-child(1)");
+	private By tableSearchModalTitle = By.cssSelector(".sc-evZas.iOWtmw");
+	private By tableSearchBySelector = By.cssSelector(".input__content.input__content--hover.input__content--select");
+	private By tableSearchByOrder = By.cssSelector(".input__select-option.input__select-option--selected");
+	private By tableSearchByCustomer = By.cssSelector("div[class='input__select-option']");
+	private By tableSearchInput = By.cssSelector("input[placeholder='Buscar por número de orden']");
+	private By tableSearchFindBtn = By.cssSelector(".sc-bczRLJ.cvcONn");
     private By filterBtn = By.xpath("//span[text()='Filtros']");
     // Localizador de las cabeceras de las columnas
     private String headerRowXPath = "//div[@class='table__head']//div[contains(@class, 'table-row-selector')]";
@@ -62,41 +62,42 @@ public class OrderCommonPage extends BasePage {
     public void clickFilter() {
         click(filterBtn, "Filter Button");
     }
-    // Metodos de Herni trasladados
-    public void clickToProcessReturnBtn() {
-    	click(toProcessReturnBtn, "Click Return Button");
+
+    // Métodos de Herni actualizados con los nuevos localizadores
+    public void clickReturnBtn() {
+        click(returnBtn, "Click Return Button");
     }
-    
-    public void clicktoProcessUploadCsvBtn() {
-    	click(toProcessUploadCsvBtn, "Click Upload CSV Button");
+
+    public void clickUploadCsvBtn() {
+        click(uploadCsvBtn, "Click Upload CSV Button");
     }
-    
-    public void clickToProcessTableSearchBySelector() {
-    	click(toProcessTableSearchBySelector, "Click Table Search By Selector");
+
+    public void clickTableSearchBySelector() {
+        click(tableSearchBySelector, "Click Table Search By Selector");
     }
-    
-    public void clickToProcessTableSearchByOrder() {
-    	click(toProcessTableSearchByOrder, "Click Table Search By Order");
+
+    public void clickTableSearchByOrder() {
+        click(tableSearchByOrder, "Click Table Search By Order");
     }
-    
-    public void clickToProcessTableSearchByCustomer() {
-    	click(toProcessTableSearchByCustomer, "Click Table Search By Customer");
+
+    public void clickTableSearchByCustomer() {
+        click(tableSearchByCustomer, "Click Table Search By Customer");
     }
-    
-    public void sendKeystoProcessTableSearchInput(String customerOrOrder) {
-    	sendKeys(toProcessTableSearchInput,customerOrOrder,"Send Order/Customer");
+
+    public void sendKeysToTableSearchInput(String customerOrOrder) {
+        sendKeys(tableSearchInput, customerOrOrder, "Send Order/Customer");
     }
-    
-    public void clickToProcessTableSearchFindBtn() {
-    	click(toProcessTableSearchFindBtn, "Click Find Button");
+
+    public void clickTableSearchFindBtn() {
+        click(tableSearchFindBtn, "Click Find Button");
     }
 
     public List<List<String>> getFirstTenRows() {
         return tableReader.readTableRows(driver, rowXPath, 10);
     }
-    
+
     public List<String> getTableHeaders() {
         TableReader tableReader = new TableReader();
-        return tableReader.readTableHeaders(driver,headerRowXPath);
+        return tableReader.readTableHeaders(driver, headerRowXPath);
     }
 }
