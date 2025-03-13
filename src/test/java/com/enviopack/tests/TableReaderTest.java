@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
-public class TableReaderTests extends BaseTest {
+public class TableReaderTest extends BaseTest {
     @Test
     public void TestTableReaderHeaders() {
         loginAs("admin");
