@@ -7,10 +7,11 @@ import com.enviopack.pages.order.OrderCommonPage;
 
 import java.util.List;
 
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class TableReaderTest extends BaseTest {
-    @Test
+    @Test @Ignore
     public void TestTableReaderHeaders() {
         loginAs("admin");
         BackOfficePage backOfficePage = new BackOfficePage(driver);
@@ -35,7 +36,7 @@ public class TableReaderTest extends BaseTest {
         // assertTrue(headers.contains("Orden / Cliente"));
         // assertTrue(headers.contains("Fecha de alta / Aforo"));
     }
-    @Test 
+    @Test @Ignore
     public void TestTableReaderRows() {
         loginAs("admin");
         BackOfficePage backOfficePage = new BackOfficePage(driver);

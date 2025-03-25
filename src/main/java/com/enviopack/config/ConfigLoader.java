@@ -55,4 +55,16 @@ public class ConfigLoader {
     public String getSellerPassword() {
     	return new ConfigAccessor(config).getKey("password_seller");
     }
+    
+    public String getTestRailUrl() {
+        return new ConfigAccessor(config).getKey("url_testrail");
+    }
+
+    public String getTestRailUsername() {
+    	 return new ConfigAccessor(config).getKey("username_testrail");
+    }
+
+    public String getTestRailPassword() {
+    	 return new ConfigAccessor(config).getKey("password_testrail");
+    }
 }

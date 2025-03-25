@@ -1,6 +1,8 @@
 package com.enviopack.tests;
 
+import com.enviopack.annotations.TestCaseId;
 import com.enviopack.common.BaseTest;
+
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
@@ -11,13 +13,15 @@ import java.time.Duration;
 public class LoginTest extends BaseTest {
 
     @Test
+    @TestCaseId(8025)
     public void testLoginAsAdmin() {
         loginAs("admin");
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("/backoffice"), "La URL no corresponde a la página de admin.");
     }
 
-    @Test
+    @Test 
+    @TestCaseId(8023)
     public void testLoginAsSeller() {
         loginAs("seller");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -26,7 +30,7 @@ public class LoginTest extends BaseTest {
         assertTrue(currentUrl.contains("ordenes"), "La URL no corresponde a la página de seller.");
     }
 
-    @Test
+    @Test 
     public void testLoginFailWithInvalidRole() {
         try {
             loginAs("invalidRole");
