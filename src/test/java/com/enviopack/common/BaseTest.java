@@ -1,6 +1,5 @@
 package com.enviopack.common;
 
-import com.enviopack.annotations.TestCaseId;
 import com.enviopack.driver.DriverManager;
 import com.enviopack.factory.DriverManagerFactory;
 import com.enviopack.pages.LoginPage;
@@ -10,11 +9,8 @@ import com.enviopack.enums.Browser;
 import com.enviopack.integrations.TestRailService;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.lang.reflect.Method;
 
 public abstract class BaseTest {
 
@@ -24,15 +20,14 @@ public abstract class BaseTest {
     protected ConfigLoader configLoader = ConfigLoader.getInstance();
     private TestRailService testRailService;
 
-    // Inicialización de TestRailService en el setup
     @BeforeMethod
     public void setUp() {
         try {
             // Inicializar el servicio TestRailService con las credenciales y la URL del TestRail
-            String username = configLoader.getTestRailUsername();
-            String password = configLoader.getTestRailPassword();
+            String testRailusername = configLoader.getTestRailUsername();
+            String testRailpassword = configLoader.getTestRailPassword();
             String testRailUrl = configLoader.getTestRailUrl();
-            this.testRailService = new TestRailService(username, password, testRailUrl);
+            this.testRailService = new TestRailService(testRailusername, testRailpassword, testRailUrl);
 
             // Configuración del WebDriver
             url = configLoader.getBaseUrl();
@@ -63,7 +58,6 @@ public abstract class BaseTest {
             DriverManager.unload();
         }
     }
-
 
     // Método para hacer login según el rol
     public void loginAs(String role) {
