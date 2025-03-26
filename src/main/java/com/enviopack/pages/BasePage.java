@@ -34,7 +34,7 @@ public class BasePage {
     	ConfigLoader configLoader = ConfigLoader.getInstance(); driver.get(configLoader.getBaseUrl() + endPoint);
     }
     
-    protected String getCurrentUrl() {
+    public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
     
