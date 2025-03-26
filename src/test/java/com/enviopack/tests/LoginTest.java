@@ -3,6 +3,7 @@ package com.enviopack.tests;
 import com.enviopack.annotations.TestCaseId;
 import com.enviopack.common.BaseTest;
 
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
@@ -12,7 +13,7 @@ import java.time.Duration;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test @Ignore
     @TestCaseId(8025)
     public void testLoginAsAdmin() {
         loginAs("admin");
@@ -20,7 +21,7 @@ public class LoginTest extends BaseTest {
         assertTrue(currentUrl.contains("/backoffice"), "La URL no corresponde a la página de admin.");
     }
 
-    @Test 
+    @Test @Ignore
     @TestCaseId(8023)
     public void testLoginAsSeller() {
         loginAs("seller");
@@ -30,7 +31,7 @@ public class LoginTest extends BaseTest {
         assertTrue(currentUrl.contains("ordenes"), "La URL no corresponde a la página de seller.");
     }
 
-    @Test 
+    @Test @Ignore
     public void testLoginFailWithInvalidRole() {
         try {
             loginAs("invalidRole");

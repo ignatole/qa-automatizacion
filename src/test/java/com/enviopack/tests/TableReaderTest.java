@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class TableReaderTest extends BaseTest {
     @Test @Ignore
     public void TestTableReaderHeaders() {
-        loginAs("admin");
+      //  loginAs("admin");
         BackOfficePage backOfficePage = new BackOfficePage(driver);
         backOfficePage.clickAccessAccountButton();
         AccessAccountPage accesAccountPage = new AccessAccountPage(driver);
@@ -38,7 +38,7 @@ public class TableReaderTest extends BaseTest {
     }
     @Test @Ignore
     public void TestTableReaderRows() {
-        loginAs("admin");
+       // loginAs("admin");
         BackOfficePage backOfficePage = new BackOfficePage(driver);
         backOfficePage.clickAccessAccountButton();
         AccessAccountPage accesAccountPage = new AccessAccountPage(driver);
