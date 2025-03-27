@@ -14,6 +14,7 @@ public class TestRailService {
 
     public TestRailService(String username, String password, String url) throws Exception {
         String runIdStr = System.getProperty("run_id");
+
         if (runIdStr != null && !runIdStr.isEmpty()) {
             try {
                 this.runId = Integer.parseInt(runIdStr);
@@ -32,20 +33,11 @@ public class TestRailService {
             Method method = result.getMethod().getConstructorOrMethod().getMethod();
             if (method.isAnnotationPresent(TestCaseId.class)) {
                 int testCaseId = method.getAnnotation(TestCaseId.class).value();
-                
-                int status;
-                String comment;
 
-                if (result.getStatus() == ITestResult.SUCCESS) {
-                    status = 1; // Passed
-                    comment = "Prueba pasada exitosamente.";
-                } else {
-                    status = 5; // Failed
-                    
-                    // Obtener el mensaje del error si falló
-                    Throwable throwable = result.getThrowable();
-                    comment = (throwable != null) ? "Error: " + throwable.getMessage() : "Prueba fallida.";
-                }
+                int status = (result.getStatus() == ITestResult.SUCCESS) ? 1 : 5; // 1 = Passed, 5 = Failed
+                String comment = (result.getStatus() == ITestResult.SUCCESS) 
+                    ? "Prueba pasada exitosamente." 
+                    : getFailureComment(result);
 
                 System.out.println("Subiendo resultado a TestRail...");
                 reportTestResult(testCaseId, status, comment);
@@ -53,6 +45,11 @@ public class TestRailService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private String getFailureComment(ITestResult result) {
+        Throwable throwable = result.getThrowable();
+        return (throwable != null) ? "Error: " + throwable.getMessage() : "Prueba fallida.";
     }
 
     public void reportTestResult(int testCaseId, int status, String comment) {
@@ -79,3 +76,4 @@ public class TestRailService {
         }
     }
 }
+

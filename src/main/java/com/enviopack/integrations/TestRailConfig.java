@@ -15,9 +15,5 @@ public class TestRailConfig {
     public static TestRailAPIClient getApiClient() {
         return apiClient;
     }
-
-    public static TestRailService getTestRailService() {
-        return testRailService;
-    }
 }
 
