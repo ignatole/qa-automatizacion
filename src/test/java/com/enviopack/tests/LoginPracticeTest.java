@@ -60,5 +60,6 @@ public class LoginPracticeTest extends BaseTest{
 		thirdStepCreateOrderPage.clickProvinceSelector();
 		thirdStepCreateOrderPage.clickProvinceName();
 		Thread.sleep(3000);
+		///para testear
 	}
 }
