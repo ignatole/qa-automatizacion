@@ -33,9 +33,11 @@ public class FirsStepCreateOrderPage extends BasePage {
     private By switchStockFullpackCheckbox = By.id("switch-stock-fullpack");
     private By modifyOriginWarehouseBtn = By.cssSelector("div[class='sc-bczRLJ lkpwjH'] a[class='link-ui__label']");
     private By orderProductsInput = By.name("productosEnOrden");
+    private By firstProductBtn = By.xpath("//*[@id=\"react-autowhatever-1--item-0\"]/div"); ////Agrego este elemento para selección del primer resultado del SKU
     private By personalizedPackageRbtn = By.id("paquetes.0.tipoPaquete_personalizado");
     private By chooseSavedPackageRbtn = By.id("paquetes.0.tipoPaquete_propio");
     private By savedPackageCbo = By.cssSelector(".input__select-wrapper .input__select-display");
+    private By useProductToBuildPackage = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div"); ////Agrego este elemeno para el switch "Usar estos productos para armar los paquetes"
     private By heightInput = By.name("paquetes.0.alto");
     private By lengthInput = By.name("paquetes.0.largo");
     private By widthInput = By.name("paquetes.0.ancho");
@@ -47,8 +49,8 @@ public class FirsStepCreateOrderPage extends BasePage {
     private By addAnotherPackageBtn = By.cssSelector("body > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > span:nth-child(1) > span:nth-child(1) > a:nth-child(1) > div.sc-bczRLJ.kDKcRz");
     private By deletePackageBtn = By.xpath("//body/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/*[name()='svg'][1]");
     private By exitCreateOrderBtn = By.xpath("//a[contains(@class, 'link-ui__label') and contains(@class, 'link-ui__label--bold') and normalize-space()='Salir']");
-    private By continueToStepTwoBtn = By.xpath("//span[normalize-space()='Continuar']");
-
+    private By continueToStepTwoBtn = By.xpath("//button[contains(., 'Continuar')]");
+                                                
     public FirsStepCreateOrderPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -154,7 +156,12 @@ public class FirsStepCreateOrderPage extends BasePage {
         sendKeys(orderProductsInput, product, "Order Products Input");
         return this;
     }
-
+////Agrego este metodo para selección del primer resultado del SKU
+    public FirsStepCreateOrderPage clickFirstProductButton() {
+        click(firstProductBtn, "Click First Product Option");
+        return this;
+    }
+    
     public FirsStepCreateOrderPage clickPersonalizedPackageRadioButton() {
         click(personalizedPackageRbtn, "Personalized Package Radio Button");
         return this;
@@ -168,6 +175,12 @@ public class FirsStepCreateOrderPage extends BasePage {
     public FirsStepCreateOrderPage clickSavedPackageComboBox() {
         click(savedPackageCbo, "Saved Package ComboBox");
         return this;
+    }
+    ////agrego esto para usar el swich que usa medidas del paquete cargado
+    
+    public FirsStepCreateOrderPage clickUseProductToBuildPackage() {
+    	click(useProductToBuildPackage, "Click Switch To Use Product Package");
+    	return this;
     }
 
     public FirsStepCreateOrderPage enterHeight(String Height) {
@@ -226,8 +239,10 @@ public class FirsStepCreateOrderPage extends BasePage {
     }
 
     public FirsStepCreateOrderPage clickContinueToStepTwoButton() {
-        click(continueToStepTwoBtn, "Continue to Step Two Button");
+    	scrollBy(500);
+    	click(continueToStepTwoBtn, "Continue to Step Two Button");
         return this;
     }
+    
 }
 

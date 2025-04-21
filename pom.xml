@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>enviopack</groupId>
-  <artifactId>automatizacionV1</artifactId>
+  <artifactId>qa-automatizacion</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>automatizacionV1</name>
+  <name>qa-automatizacion</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

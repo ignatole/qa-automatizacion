@@ -16,7 +16,7 @@ public class SecondStepCreateOrderPage extends BasePage{
 	private By toDeliveryBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(3) > div.sc-bczRLJ.kAizsf");
 	private By toBranchBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(4) > div.sc-bczRLJ.kAizsf");
 	private By quotationTypeTbl = By.xpath("//*[contains(@id, 'cotizacion-')]");
-	private By continueBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.inNZIJ:nth-child(3) div.sc-bczRLJ.kodNjj button.button.ripple.button--contained div.button__wrapper.button__wrapper--contained.button__wrapper--contained-primary > span.button__name");
+	private By continueBtn = By.xpath("//button[contains(., 'Continuar')]");//modifque esto para que quede igual al primer paso
 	private By backBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.inNZIJ:nth-child(3) span.link-ui span.link-ui__wrapper > a.link-ui__label.link-ui__label--bold");
 	private By modifyBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.lkpwjH.sc-gsnTZi.kTHsrv:nth-child(3) div.sc-bczRLJ.itijgB.sc-jTYCaT.fCEkdV div.sc-bczRLJ.drblFL:nth-child(1) > span.sc-evZas.kmKcKl.LinkButton__SLinkButton-sc-1dzp66t-0.cvsCJw:nth-child(2)");
 	private By viewLocationLinkBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.dMlKGt.sc-gsnTZi.bDDOzU:nth-child(2) div.sc-bczRLJ.lkpwjH.sc-gsnTZi.kTHsrv div.sc-bczRLJ.hzHcQF.sc-jTYCaT.fCEkdV.CotizacionItem__CotizacionWrapper-sc-1qm0bf7-0.gBwLQW:nth-child(1) div.sc-bczRLJ.dfYsda:nth-child(2) > span.sc-evZas.kmKcKl.LinkButton__SLinkButton-sc-1dzp66t-0.cvsCJw:nth-child(2)");
@@ -98,4 +98,10 @@ public class SecondStepCreateOrderPage extends BasePage{
 	 public void withoutQuoteTbl () {
 		 click(withoutQuoteTbl, "Click select zip code");
 	 }
+	 //Agregue para el scroll hasta el boton continuar
+	    public SecondStepCreateOrderPage clickContinueToStepTwoButton() {
+	    	scrollBy(500);
+	    	click(continueBtn, "Continue to Step Three Button");
+	        return this;
+	    }
 }

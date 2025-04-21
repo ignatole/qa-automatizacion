@@ -21,7 +21,10 @@ public class ThirdStepCreateOrderPage extends BasePage {
     private By streetInput = By.name("calle");                                               
     private By numberInput = By.cssSelector("input[name='numero']");                          
     private By floorInput = By.cssSelector("input[name='piso'][style*='width: 165px']");   
-    private By apartmentInput = By.xpath("//input[@name='depto']");                          
+    private By apartmentInput = By.xpath("//input[@name='depto']");
+    private By cityInput = By.xpath("//input[@name='localidad']"); /// Agrego esto para localizar el campo ciudad
+    private By provinceSelector = By.xpath("//div[@class='input__select-wrapper']");
+    private By provinceNameSelector = By.xpath("//span[normalize-space()='Buenos Aires']");
 
     // Nuevos elementos agregados
     private By containedBtn = By.cssSelector("#app > div.sc-bczRLJ.hjEakJ > div.sc-bczRLJ.loZxdD > div > div.sc-bczRLJ.efEKrF > div.sc-bczRLJ.gPgnSp > div.sc-bczRLJ.inNZIJ > div > button.button.ripple.button--contained > div > span");
@@ -82,6 +85,18 @@ public class ThirdStepCreateOrderPage extends BasePage {
 	
 	 public void enterApartment(String apartment) {
 	     sendKeys(apartmentInput, apartment, "Entering apartment");
+	 }
+	 //Agrego esto para llamar al localizador de ciudad
+	 public void enterCity(String city) {
+		 sendKeys(cityInput, city, "Entering city");
+	 }
+	 
+	 public void clickProvinceSelector() {
+		 click(provinceSelector, "Click provice selector");
+	 }
+	 
+	 public void clickProvinceName() {
+		 click(provinceNameSelector, "Click provice name");
 	 }
 	
 	 // Métodos para interactuar con los nuevos elementos
