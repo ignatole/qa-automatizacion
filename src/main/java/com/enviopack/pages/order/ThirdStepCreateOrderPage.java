@@ -21,11 +21,10 @@ public class ThirdStepCreateOrderPage extends BasePage {
     private By streetInput = By.name("calle");                                               
     private By numberInput = By.cssSelector("input[name='numero']");                          
     private By floorInput = By.cssSelector("input[name='piso'][style*='width: 165px']");   
-    private By apartmentInput = By.xpath("//input[@name='depto']"); 
-    private By cityInput = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/div[4]/div[5]/div/input"); // se agrego el localizador ciudad
-    private By provinceInput = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/div[4]/div[6]/div/div/div"); // se agrega localizador provincia
-    private By additionalReferenceInput = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/div[5]/div/input"); // se agrega localizador referencia adicional
-    
+    private By apartmentInput = By.xpath("//input[@name='depto']");
+    private By cityInput = By.xpath("//input[@name='localidad']"); 
+    private By provinceSelector = By.xpath("//div[@class='input__select-wrapper']");
+    private By provinceNameSelector = By.xpath("//span[normalize-space()='Buenos Aires']");
     // Nuevos elementos agregados
     private By containedBtn = By.cssSelector("#app > div.sc-bczRLJ.hjEakJ > div.sc-bczRLJ.loZxdD > div > div.sc-bczRLJ.efEKrF > div.sc-bczRLJ.gPgnSp > div.sc-bczRLJ.inNZIJ > div > button.button.ripple.button--contained > div > span");
     private By outlinedBtn = By.cssSelector("#app > div.sc-bczRLJ.hjEakJ > div.sc-bczRLJ.loZxdD > div > div.sc-bczRLJ.efEKrF > div.sc-bczRLJ.gPgnSp > div.sc-bczRLJ.inNZIJ > div > button.button.ripple.button--outlined > div > span");
@@ -86,6 +85,7 @@ public class ThirdStepCreateOrderPage extends BasePage {
 	 public void enterApartment(String apartment) {
 	     sendKeys(apartmentInput, apartment, "Entering apartment");
 	 }
+<<<<<<< HEAD
 	 
 	 public void enterCity (String city) {
 		 sendKeys(cityInput, city, "Entering city");
@@ -97,6 +97,19 @@ public class ThirdStepCreateOrderPage extends BasePage {
 	 
 	 public void enterAdditionalReference (String additionalReference) {
 		 sendKeys(additionalReferenceInput, additionalReference, "Entering additional Reference");
+=======
+	 //Agrego esto para llamar al localizador de ciudad
+	 public void enterCity(String city) {
+		 sendKeys(cityInput, city, "Entering city");
+	 }
+	 
+	 public void clickProvinceSelector() {
+		 click(provinceSelector, "Click provice selector");
+	 }
+	 
+	 public void clickProvinceName() {
+		 click(provinceNameSelector, "Click provice name");
+>>>>>>> origin/Practica-login-Herni
 	 }
 	
 	 // Métodos para interactuar con los nuevos elementos
