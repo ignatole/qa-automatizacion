@@ -2,6 +2,7 @@ package com.enviopack.pages;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -72,5 +73,10 @@ public class BasePage {
     protected void waitForGivenTime(long time) {
         Uninterruptibles.sleepUninterruptibly(time, TimeUnit.SECONDS);
     }
+    // Se agrega scroll parametrizado
+    public void scrollBy(int yPixels) {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, arguments[0]);", yPixels);
+    }
+
 }
 
