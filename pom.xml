@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>enviopack</groupId>
-  <artifactId>automatizacionV1</artifactId>
+  <artifactId>qa-automatizacion</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>automatizacionV1</name>
+  <name>qa-automatizacion</name>
   <url>http://www.example.com</url>
 
   <properties>
@@ -37,7 +37,19 @@
       <artifactId>webdrivermanager</artifactId>
       <version>5.9.0</version>
     </dependency>
+    <dependency>
+ <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.13</version>
+</dependency>
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20210307</version>
+</dependency>
   </dependencies>
+  
+  
 
   <build>
     <plugins>
