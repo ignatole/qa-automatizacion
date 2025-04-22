@@ -11,9 +11,10 @@ import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class TableReaderTest extends BaseTest {
-    @Test @Ignore
+	
+    @Test 
     public void TestTableReaderHeaders() {
-      //  loginAs("admin");
+        loginAs("admin");
         BackOfficePage backOfficePage = new BackOfficePage(driver);
         backOfficePage.clickAccessAccountButton();
         AccessAccountPage accesAccountPage = new AccessAccountPage(driver);
@@ -34,11 +35,11 @@ public class TableReaderTest extends BaseTest {
 
         // Puedes agregar aserciones aquí para validar los encabezados esperados
         // assertTrue(headers.contains("Orden / Cliente"));
-        // assertTrue(headers.contains("Fecha de alta / Aforo"));
+         // assertTrue(headers.contains("Fecha de alta / Aforo"));
     }
-    @Test @Ignore
+    @Test 
     public void TestTableReaderRows() {
-       // loginAs("admin");
+    	loginAs("admin");
         BackOfficePage backOfficePage = new BackOfficePage(driver);
         backOfficePage.clickAccessAccountButton();
         AccessAccountPage accesAccountPage = new AccessAccountPage(driver);

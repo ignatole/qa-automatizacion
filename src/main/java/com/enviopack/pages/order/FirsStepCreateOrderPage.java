@@ -47,8 +47,10 @@ public class FirsStepCreateOrderPage extends BasePage {
     private By addAnotherPackageBtn = By.cssSelector("body > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > span:nth-child(1) > span:nth-child(1) > a:nth-child(1) > div.sc-bczRLJ.kDKcRz");
     private By deletePackageBtn = By.xpath("//body/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/*[name()='svg'][1]");
     private By exitCreateOrderBtn = By.xpath("//a[contains(@class, 'link-ui__label') and contains(@class, 'link-ui__label--bold') and normalize-space()='Salir']");
-    private By continueToStepTwoBtn = By.xpath("//span[normalize-space()='Continuar']");
-
+    private By continueToStepTwoBtn = By.xpath("//button[contains(., 'Continuar')]");
+    private By firstProductBtn = By.xpath("//*[@id='react-autowhatever-1--item-0']/div");
+    private By useProductToBuildPackage = By.xpath("//*[@id='app']/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div");
+    
     public FirsStepCreateOrderPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -227,6 +229,16 @@ public class FirsStepCreateOrderPage extends BasePage {
 
     public FirsStepCreateOrderPage clickContinueToStepTwoButton() {
         click(continueToStepTwoBtn, "Continue to Step Two Button");
+        return this;
+    }
+    
+    public FirsStepCreateOrderPage clickUseProductToBuildPackage() {
+        click(useProductToBuildPackage, "Click Switch To Use Product Package");
+        return this;
+    }
+    
+    public FirsStepCreateOrderPage clickFirstProductButton() {
+        click(firstProductBtn, "Click First Product Option");
         return this;
     }
 }
