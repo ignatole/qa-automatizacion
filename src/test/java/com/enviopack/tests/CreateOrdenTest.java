@@ -149,8 +149,5 @@ public void createOrder () throws InterruptedException {
 	firsStep();
 	secondStep();
 	thirdStep();
-	
-	
-	
-}
+	}
 }
