@@ -16,11 +16,7 @@ public class SecondStepCreateOrderPage extends BasePage{
 	private By toDeliveryBtnSwitch = By.xpath("\"//div[@value='a-domicilio']\""); //Se modifico el localizador
 	private By toBranchBtnSwitch = By.id("desde-sucursal"); //Se modifico el localizador
 	private By quotationTypeTbl = By.xpath("//*[contains(@id, 'cotizacion-')]");
-<<<<<<< HEAD
-	private By continueBtn = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[1]/div/div[4]/div/button/div");
-=======
 	private By continueBtn = By.xpath("//button[contains(., 'Continuar')]");//modifque esto para que quede igual al primer paso
->>>>>>> origin/Practica-login-Herni
 	private By backBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.inNZIJ:nth-child(3) span.link-ui span.link-ui__wrapper > a.link-ui__label.link-ui__label--bold");
 	private By modifyBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.lkpwjH.sc-gsnTZi.kTHsrv:nth-child(3) div.sc-bczRLJ.itijgB.sc-jTYCaT.fCEkdV div.sc-bczRLJ.drblFL:nth-child(1) > span.sc-evZas.kmKcKl.LinkButton__SLinkButton-sc-1dzp66t-0.cvsCJw:nth-child(2)");
 	private By viewLocationLinkBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.dMlKGt.sc-gsnTZi.bDDOzU:nth-child(2) div.sc-bczRLJ.lkpwjH.sc-gsnTZi.kTHsrv div.sc-bczRLJ.hzHcQF.sc-jTYCaT.fCEkdV.CotizacionItem__CotizacionWrapper-sc-1qm0bf7-0.gBwLQW:nth-child(1) div.sc-bczRLJ.dfYsda:nth-child(2) > span.sc-evZas.kmKcKl.LinkButton__SLinkButton-sc-1dzp66t-0.cvsCJw:nth-child(2)");
@@ -73,7 +69,7 @@ public class SecondStepCreateOrderPage extends BasePage{
 	 	}
 	 
 	 // Elemento capturado de la tabla padre de las cotizaciones 
-	 public void clickquotationTypeTbl() {
+	 public void clickQuotationTypeTbl() {
 		 click(quotationTypeTbl, "Click Quotation Type table");
 	 	}
 	 

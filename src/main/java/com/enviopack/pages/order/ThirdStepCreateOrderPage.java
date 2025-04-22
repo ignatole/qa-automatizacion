@@ -85,19 +85,6 @@ public class ThirdStepCreateOrderPage extends BasePage {
 	 public void enterApartment(String apartment) {
 	     sendKeys(apartmentInput, apartment, "Entering apartment");
 	 }
-<<<<<<< HEAD
-	 
-	 public void enterCity (String city) {
-		 sendKeys(cityInput, city, "Entering city");
-	 }
-	 
-	 public void enterProvince (String province) {
-		 sendKeys(provinceInput, province, "Entering city");
-	 }
-	 
-	 public void enterAdditionalReference (String additionalReference) {
-		 sendKeys(additionalReferenceInput, additionalReference, "Entering additional Reference");
-=======
 	 //Agrego esto para llamar al localizador de ciudad
 	 public void enterCity(String city) {
 		 sendKeys(cityInput, city, "Entering city");
@@ -109,7 +96,6 @@ public class ThirdStepCreateOrderPage extends BasePage {
 	 
 	 public void clickProvinceName() {
 		 click(provinceNameSelector, "Click provice name");
->>>>>>> origin/Practica-login-Herni
 	 }
 	
 	 // Métodos para interactuar con los nuevos elementos
