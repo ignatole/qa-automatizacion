@@ -61,7 +61,7 @@ public void createOrden () throws InterruptedException{
 	SecondStepCreateOrderPage secondStepCreateOrderPage = new SecondStepCreateOrderPage(driver);
 	Thread.sleep(3000);
 	//secondStepCreateOrderPage.clickdeliveryBtn();
-	secondStepCreateOrderPage.clickquotationTypeTbl();
+	secondStepCreateOrderPage.clickQuotationTypeTbl();
 	Thread.sleep(3000);
 	secondStepCreateOrderPage.clickcontinueBtn();
 	
@@ -79,7 +79,8 @@ public void createOrden () throws InterruptedException{
 	thirdStepCreateOrderPage.enterFloor("8");
 	thirdStepCreateOrderPage.enterApartment("H");
 	thirdStepCreateOrderPage.enterCity("Capital Federal");
-	thirdStepCreateOrderPage.enterProvince("Capital Federal");
+	thirdStepCreateOrderPage.clickProvinceSelector();
+	thirdStepCreateOrderPage.clickProvinceName();
 	Thread.sleep(3000);
 	thirdStepCreateOrderPage.clickContainedBtn();
 	
@@ -120,7 +121,7 @@ public void secondStep () throws InterruptedException {
 	Thread.sleep(3000);
 	SecondStepCreateOrderPage secondStepCreateOrderPage = new SecondStepCreateOrderPage(driver);
 	Thread.sleep(3000);
-	secondStepCreateOrderPage.clickquotationTypeTbl();
+	secondStepCreateOrderPage.clickQuotationTypeTbl();
 	Thread.sleep(3000);
 	secondStepCreateOrderPage.clickcontinueBtn();
 	
@@ -139,7 +140,8 @@ public void thirdStep () throws InterruptedException {
 	thirdStepCreateOrderPage.enterFloor("8");
 	thirdStepCreateOrderPage.enterApartment("H");
 	thirdStepCreateOrderPage.enterCity("Capital Federal");
-	thirdStepCreateOrderPage.enterProvince("Capital Federal");
+	thirdStepCreateOrderPage.clickProvinceSelector();
+	thirdStepCreateOrderPage.clickProvinceName();
 	thirdStepCreateOrderPage.clickContainedBtn();
 }
 

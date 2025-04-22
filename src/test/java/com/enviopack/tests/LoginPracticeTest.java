@@ -41,9 +41,9 @@ public class LoginPracticeTest extends BaseTest{
 		firsStepCreateOrderPage.clickContinueToStepTwoButton();
 		Thread.sleep(3000);
 		SecondStepCreateOrderPage secondStepCreateOrderPage =new SecondStepCreateOrderPage(driver);
-		secondStepCreateOrderPage.quotationTypeTbl();
+		secondStepCreateOrderPage.clickQuotationTypeTbl();
 		Thread.sleep(3000);
-		secondStepCreateOrderPage.continueBtn();
+		secondStepCreateOrderPage.clickContinueToStepTwoButton();
 		Thread.sleep(3000);
 		ThirdStepCreateOrderPage thirdStepCreateOrderPage =new ThirdStepCreateOrderPage(driver);
 		int numeroAleatorio = (int)(Math.random() * 900) + 100;
