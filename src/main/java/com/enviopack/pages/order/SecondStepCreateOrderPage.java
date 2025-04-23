@@ -11,12 +11,12 @@ public class SecondStepCreateOrderPage extends BasePage{
 	private By stepTwoTtl = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.EcUGL.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.hdFuNh:nth-child(3) > div.sc-bczRLJ.jFlnUV");
 	private By ensureShipmentCheckbox = By.id("seguro-check");
 	private By moreInformationLinkBtn = By.xpath("//*[@id=\"app\"]/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/a");
-	private By fromMyWarehousePickupBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(1) > div.sc-bczRLJ.kAizsf");
+	private By fromMyWarehousePickupBtnSwitch = By.id("desde-domicilio-colecta"); //Se modifico el localizador
 	private By fromBranchBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(2) > div.sc-bczRLJ.kAizsf");
-	private By toDeliveryBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(3) > div.sc-bczRLJ.kAizsf");
-	private By toBranchBtnSwitch = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.beyQxW.sc-gsnTZi.ijyXhc:nth-child(1) div.sc-bczRLJ.fwWgpS:nth-child(4) > div.sc-bczRLJ.kAizsf");
+	private By toDeliveryBtnSwitch = By.xpath("\"//div[@value='a-domicilio']\""); //Se modifico el localizador
+	private By toBranchBtnSwitch = By.id("desde-sucursal"); //Se modifico el localizador
 	private By quotationTypeTbl = By.xpath("//*[contains(@id, 'cotizacion-')]");
-	private By continueBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.inNZIJ:nth-child(3) div.sc-bczRLJ.kodNjj button.button.ripple.button--contained div.button__wrapper.button__wrapper--contained.button__wrapper--contained-primary > span.button__name");
+	private By continueBtn = By.xpath("//button[contains(., 'Continuar')]");//modifque esto para que quede igual al primer paso
 	private By backBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.inNZIJ:nth-child(3) span.link-ui span.link-ui__wrapper > a.link-ui__label.link-ui__label--bold");
 	private By modifyBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.lkpwjH.sc-gsnTZi.kTHsrv:nth-child(3) div.sc-bczRLJ.itijgB.sc-jTYCaT.fCEkdV div.sc-bczRLJ.drblFL:nth-child(1) > span.sc-evZas.kmKcKl.LinkButton__SLinkButton-sc-1dzp66t-0.cvsCJw:nth-child(2)");
 	private By viewLocationLinkBtn = By.cssSelector("div.sc-bczRLJ.hjEakJ:nth-child(3) div.sc-bczRLJ.loZxdD:nth-child(2) div.sc-bczRLJ.aJYXL div.sc-bczRLJ.efEKrF:nth-child(2) div.sc-bczRLJ.efEKrF:nth-child(1) div.sc-bczRLJ.iWABbI div.sc-bczRLJ.dMlKGt.sc-gsnTZi.bDDOzU:nth-child(2) div.sc-bczRLJ.lkpwjH.sc-gsnTZi.kTHsrv div.sc-bczRLJ.hzHcQF.sc-jTYCaT.fCEkdV.CotizacionItem__CotizacionWrapper-sc-1qm0bf7-0.gBwLQW:nth-child(1) div.sc-bczRLJ.dfYsda:nth-child(2) > span.sc-evZas.kmKcKl.LinkButton__SLinkButton-sc-1dzp66t-0.cvsCJw:nth-child(2)");
@@ -42,13 +42,13 @@ public class SecondStepCreateOrderPage extends BasePage{
 		 click(stepTwoTtl, "title verification step 2");
 	 	}
 	 
-	// Modal quiero asegurar mi envío
+	// Modal quiero asegurar mi envío 
 	
-	public void ensureShipmentCheckbox () {
+	public void clickensureShipmentCheckbox () {
 		click(ensureShipmentCheckbox, "Click Checkbox Ensure Shipment");
 	}
 	
-	public void moreInformationLinkBtn () { 
+	public void clickmoreInformationLinkBtn () { 
 		click(moreInformationLinkBtn, "Click LinkButton More Information");
 	}
 	 
@@ -56,46 +56,52 @@ public class SecondStepCreateOrderPage extends BasePage{
 		 click(fromMyWarehousePickupBtnSwitch, "click Button Switch from My Warehouse Pickup");
 	 	}
 	   
-	 public void fromBranchBtn() {
+	 public void clickfromBranchBtn() {
 		 click(fromBranchBtnSwitch, "Click Button Switch From Branch");
 		}
 	    
-	 public void deliveryBtn() {
+	 public void clickdeliveryBtn() {
 		 click(toDeliveryBtnSwitch, "Click Button Switch To Delivery ");
 	 	}
 	 
-	 public void branchBtn() {
+	 public void clickbranchBtn() {
 		 click(toBranchBtnSwitch, "Click utton Switch To Branch");
 	 	}
 	 
 	 // Elemento capturado de la tabla padre de las cotizaciones 
-	 public void quotationTypeTbl() {
+	 public void clickQuotationTypeTbl() {
 		 click(quotationTypeTbl, "Click Quotation Type table");
 	 	}
 	 
-	 public void continueBtn() {
+	 public void clickcontinueBtn() {
 		 click(continueBtn, "CLick Continue Button");
 	 	}
 	 
-	 public void backBtn() {
+	 public void clickbackBtn() {
 		 click(backBtn, "Click Back Button");
 	 	}
 	 
-	 public void modifyBtn () {
+	 public void clickmodifyBtn () {
 		 click(modifyBtn, "Click Modify Button");
 	 	}
 		 
-	 public void viewLocationBtn () {
+	 public void clickviewLocationBtn () {
 		 click(viewLocationLinkBtn, "Click View Location Button");
 	 	}
 	 
 	 // Este elemento solo se ve cuando no hay cotizaciones disponibles.
-	 public void cleanFiltersBtn () {
+	 public void clickcleanFiltersBtn () {
 		 click(cleanFiltersLinkBtn, "Click Clean Filters Button");
 	 	}
 	 
 	 // Modal Entrega a sucursal: No hay cotizaciones disponibles con el código postal ingresado se capturo el elemento de la tabla completa, luego para el caso de prueba se tiene que enlistas en CP a tomar 
-	 public void withoutQuoteTbl () {
+	 public void clickwithoutQuoteTbl () {
 		 click(withoutQuoteTbl, "Click select zip code");
 	 }
+	 //Agregue para el scroll hasta el boton continuar
+	    public SecondStepCreateOrderPage clickContinueToStepTwoButton() {
+	    	scrollBy(500);
+	    	click(continueBtn, "Continue to Step Three Button");
+	        return this;
+	    }
 }

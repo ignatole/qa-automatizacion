@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>enviopack</groupId>
-  <artifactId>automatizacionV1</artifactId>
+  <artifactId>qa-automatizacion</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>qa-automotizacion</name>
+  <name>qa-automatizacion</name>
   <url>http://www.example.com</url>
 
   <properties>
@@ -75,4 +75,3 @@
     </plugins>
   </build>
 </project>
-
