@@ -32,7 +32,7 @@ Para ejecutar las pruebas, sigue estos pasos:
 
 1. Abre una terminal o consola.
 2. Cambia el directorio a la carpeta donde deseas almacenar tu proyecto: cd /ruta/a/tu/carpeta
-3. Clona el repo: git clone https://github.com/carlaramos-2024/automatizacionV1.git
+3. Clona el repo: git clone https://bitbucket.org/enviopack/qa-automatizacion/src/main/
 4. Instale las dependencias: mvn clean install
 5. Ejecute las pruebas: mvn test
 
